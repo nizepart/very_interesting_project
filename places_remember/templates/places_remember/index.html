@@ -1,0 +1,18 @@
+{% extends 'places_remember/base.html' %}
+{% block title %}
+    Главная страница
+{% endblock %}
+
+{% block content %}
+    <h1>Главная страница</h1>
+    {% if memories %}
+        {% for el in memories %}
+            <div class="alert-warning mt-2">
+                <h3>{{ el.title }}</h3>
+                <p>{{ el.task }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>У вас нет ни одного воспоминания</p>
+    {% endif %}
+{% endblock %}
