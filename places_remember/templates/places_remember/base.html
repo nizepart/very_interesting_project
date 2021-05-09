@@ -17,12 +17,17 @@
         </a>
 
         <ul class="nav nav-pills">
-            <li class="nav-item"><a href="{% url 'home' %}" class="nav-link active">Главная</a></li>
-            <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">О приложении</a></li>
-            <li class="nav-item"><a href="{% url 'create' %}" class="nav-link">Добавить воспоминание</a></li>
-            <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Авторизация</a></li>
-            <li class="nav-item"><a href="{% url 'register' %}" class="nav-link">Регистрация</a></li>
-            <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Выйти</a></li>
+            {% if request.user.is_authenticated %}
+                <li class="nav-item"><a href="{% url 'home' %}" class="nav-link active">Главная</a></li>
+                <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">О приложении</a></li>
+                <li class="nav-item"><a href="{% url 'create' %}" class="nav-link">Добавить воспоминание</a></li>
+            {% endif %}
+            {% if request.user.is_authenticated == False %}
+                <li class="nav-item"><a href="{% url 'login' %}" class="nav-link active">Войти</a></li>
+            {% endif %}
+            {% if request.user.is_authenticated %}
+                <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Выйти</a></li>
+            {% endif %}
         </ul>
         </header>
     </div>

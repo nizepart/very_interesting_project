@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Регистрация</h1><br>
+    <h3>Регистрация</h3><br>
     <form method="post" action="">
         {% csrf_token %}
         {{ form.username }}<br>
@@ -19,4 +19,6 @@
         <br>
         <button type="submit" class="btn btn-success">Создать пользователя</button>
     </form>
+    <h5 class="mt-5">Уже есть аккаунт?</h5>
+    <a href="{% url 'login' %}" class="btn btn-primary btn-sm active" role="button" aria-pressed="true">Авторизация</a>
 {% endblock %}
