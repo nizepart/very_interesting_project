@@ -1,0 +1,14 @@
+{% extends 'places_remember/base.html' %}
+{% block title %}
+    Страница авторизации
+{% endblock %}
+
+{% block content %}
+    <h1>Авторизация</h1><br>
+    <form method="post" action="">
+        {% csrf_token %}
+        <input type="text" name="username" class="form-control"><br>
+        <input type="text" name="password" class="form-control"><br>
+        <button type="submit" class="btn btn-success">Авторизироваться</button>
+    </form>
+{% endblock %}

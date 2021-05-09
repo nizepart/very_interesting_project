@@ -1,0 +1,22 @@
+{% extends 'places_remember/base.html' %}
+{% block title %}
+    Страница регистрации
+{% endblock %}
+
+{% block content %}
+    <h1>Регистрация</h1><br>
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.username }}<br>
+
+        {{ form.email }}<br>
+
+        {{ form.password1.label }}
+        {{ form.password1 }}<br>
+        <br>
+        {{ form.password2.label }}
+        {{ form.password2 }}<br>
+        <br>
+        <button type="submit" class="btn btn-success">Создать пользователя</button>
+    </form>
+{% endblock %}
