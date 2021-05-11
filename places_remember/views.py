@@ -24,7 +24,9 @@ def create(request):
     if request.method == "POST":
         form = MemoryForm(request.POST)
         if form.is_valid():
-            form.save()
+            post = form.save(commit=False)
+            post.author = request.user
+            post.save()
             return redirect('home')
         else:
             error = 'Форма неверная'
