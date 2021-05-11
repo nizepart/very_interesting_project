@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from . models import Memory
 from .forms import MemoryForm, CreateUserForm
 
-from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth import authenticate, login
 
 from django.contrib.auth.decorators import login_required
 
@@ -68,9 +68,3 @@ def loginPage(request):
                 return redirect('home')
 
         return render(request, 'places_remember/login.html')
-
-
-@login_required(login_url='login')
-def logoutPage(request):
-    logout(request)
-    return redirect('login')

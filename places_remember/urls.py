@@ -1,5 +1,6 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('', views.index, name='home'),
@@ -9,5 +10,6 @@ urlpatterns = [
 
     path('register', views.register, name='register'),
     path('login', views.loginPage, name='login'),
-    path('logout', views.logoutPage, name='logout'),
+    path('logout', auth_views.LogoutView.as_view(), name='logout'),
+    path('', include('social_django.urls')),
 ]
