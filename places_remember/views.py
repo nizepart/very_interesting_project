@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required(login_url='login')
 def index(request):
-    memories = Memory.objects.order_by('-id')
+    memories = Memory.objects.filter(author=request.user).order_by('-id')
     return render(request, 'places_remember/index.html', {'memories': memories})
 
 
