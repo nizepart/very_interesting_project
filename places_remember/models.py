@@ -8,7 +8,7 @@ from places.fields import PlacesField
 class Memory(models.Model):
     location = PlacesField('Место на карте')
     title = models.CharField('Название', max_length=50)
-    task = models.TextField('Описание')
+    task = models.TextField('Комментарий')
     author = models.ForeignKey(User, default=None, on_delete=models.CASCADE)
 
     def __str__(self):

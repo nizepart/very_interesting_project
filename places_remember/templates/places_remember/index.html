@@ -4,12 +4,17 @@
 {% endblock %}
 
 {% block content %}
-    <h1>Главная страница</h1>
+    <h1 class="mb-3">Главная страница</h1>
     {% if memories %}
         {% for el in memories %}
-            <div class="alert-warning mt-2">
-                <h3>{{ el.title }}</h3>
-                <p>{{ el.task }}</p>
+            <div class="card mb-3">
+                <div class="card-header">
+                    <h3>{{ el.title }}</h3>
+                </div>
+                <div class="card-body">
+                    <p>{{ el.task }}</p>
+                    <a  target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/search/{{ el.location.place }}/" class="btn btn-secondary">Место на карте</a>
+                </div>
             </div>
         {% endfor %}
     {% else %}

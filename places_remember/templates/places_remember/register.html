@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block content %}
-    <h3>Регистрация</h3><br>
+    <h3 class="mb-3">Регистрация</h3>
     <form method="post" action="">
         {% csrf_token %}
         {{ form.username }}<br>

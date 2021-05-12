@@ -15,7 +15,7 @@ class MemoryForm(ModelForm):
             }),
             "task": Textarea(attrs={
                 'class': 'form-control',
-                'placeholder': 'Введите описание'
+                'placeholder': 'Введите комментарий'
             })
         }
 
