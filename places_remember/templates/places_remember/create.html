@@ -5,10 +5,11 @@
 
 {% block content %}
     <h1>Добавить воспоминание</h1>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
     <form method="post">
         {% csrf_token %}
-        {{ form.title }}<br>
-        {{ form.task }}<br>
+        {{ form.as_p }}
+        {{ form.media }}
         <button type="submit" class="btn btn-success">Добавить</button>
         <span>{{ error }}</span>
     </form>

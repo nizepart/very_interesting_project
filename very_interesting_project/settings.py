@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'places_remember',
     'social_django',
+    'places',
 ]
 
 AUTHENTICATION_BACKENDS = [
@@ -159,5 +160,11 @@ SOCIAL_AUTH_FACEBOOK_EXTRA_DATA = [
 SOCIAL_AUTH_VK_OAUTH2_KEY = '7850888'
 SOCIAL_AUTH_VK_OAUTH2_SECRET = '7fVqzDuFVkNWiPlM9ujQ'
 
+
+#MAP
+PLACES_MAPS_API_KEY='AIzaSyB36ffRZ61JmqJqc61_PK52hG9c2L9-OKc'
+PLACES_MAP_WIDGET_HEIGHT=480
+PLACES_MAP_OPTIONS='{"center": { "lat": 38.971584, "lng": -95.235072 }, "zoom": 10}'
+PLACES_MARKER_OPTIONS='{"draggable": true}'
 
 

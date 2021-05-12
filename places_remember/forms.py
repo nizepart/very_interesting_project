@@ -7,7 +7,7 @@ from django.contrib.auth.models import User
 class MemoryForm(ModelForm):
     class Meta:
         model = Memory
-        fields = ['title', 'task']
+        fields = ['title', 'task', 'location']
         widgets = {
             "title": TextInput(attrs={
                 'class': 'form-control',
