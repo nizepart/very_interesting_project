@@ -1,0 +1,24 @@
+version: "3"
+
+services:
+
+  web:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - ./:/myapp
+      - ./docker/pg_data/db.sqlite3:/db.sqlite3
+    expose:
+      - 32777
+
+  nginx:
+    build:
+      context: ../very_interesting_project/docker/nginx
+      dockerfile: Dockerfile
+    depends_on:
+      - web
+    ports:
+      - "80:80"
+    volumes:
+      - ./static:/static

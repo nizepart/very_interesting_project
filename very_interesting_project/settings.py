@@ -130,6 +130,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'static'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -162,7 +163,7 @@ SOCIAL_AUTH_VK_OAUTH2_SECRET = '7fVqzDuFVkNWiPlM9ujQ'
 
 
 #MAP
-PLACES_MAPS_API_KEY='AIzaSyB36ffRZ61JmqJqc61_PK52hG9c2L9-OKc'
+PLACES_MAPS_API_KEY='PUT HERE YOUR KEY'
 PLACES_MAP_WIDGET_HEIGHT=480
 PLACES_MAP_OPTIONS='{"center": { "lat": 38.971584, "lng": -95.235072 }, "zoom": 10}'
 PLACES_MARKER_OPTIONS='{"draggable": true}'
