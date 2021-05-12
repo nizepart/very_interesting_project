@@ -1,7 +1,9 @@
 # very_interesting_project
 # How to run the app
 1. ### download githup repo on your computer
-2. ### pip install -r requirements.txt
+2. ### Open app's folder in terminal and run: 
+   * `pip install -r requirements.txt`
+   * `python manage.py runserver`
 3. ### follow the link : http://localhost:8000/
 4. ### use
 
